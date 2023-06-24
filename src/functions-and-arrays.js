@@ -17,8 +17,41 @@ const words = [
   "orchard",
   "crackpot",
 ];
+const empty = [];
+function findLongestWord(words) {
+  if (words.length === 0) {
+    return null;
+  } else if (words.length === 1) {
+    return words[0];
+  }
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > words[i + 1].length) {
+      return words[i];
+    } else if (words[i].length < words[i + 1].length) {
+      return words[i + 1];
+    } else if (words[i].length === words[i + 1].length) {
+      return words[i];
+    }
+  }
+}
 
-function findLongestWord() {}
+// for (i=0; i<words.length; i++) {
+//   for (j=1; j<words.length; j++){
+//    if (words[i].length > words[j].length){
+//      return words[i];
+
+//  } else if (words[i].length < words[j].length) {
+
+// return words[j];
+
+//  } else if ((words[i].length == words[j].length)) {
+//   return words[i];
+
+//  }
+//  }
+// }
+
+findLongestWord(empty);
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
