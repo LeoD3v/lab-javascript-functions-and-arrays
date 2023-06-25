@@ -17,34 +17,47 @@ const words = [
   "orchard",
   "crackpot",
 ];
-const empty = [];
+
 function findLongestWord(words) {
   if (words.length === 0) {
     return null;
   } else if (words.length === 1) {
     return words[0];
   }
-  for (let i = 0; i < words.length; i++) {
-    if (words[i].length > words[i + 1].length) {
-      return words[i];
-    } else if (words[i].length < words[i + 1].length) {
-      return words[i + 1];
-    } else if (words[i].length === words[i + 1].length) {
-      return words[i];
+
+  let longestWord = words[0];
+
+  for (let i = 1; i < words.length; i++) {
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
     }
   }
+
+  return longestWord;
 }
+// if (words.length === 0) {
+//   return null;
+// } else if (words.length === 1) {
+//   return words[0];
+// }
+// for (let i = 0; i < words.length; i++) {
+//   if (words[i].length > words[i + 1].length) {
+//     return words[i];
+//   } else if (words[i].length < words[i + 1].length) {
+//     return words[i + 1];
+//   } else if (words[i].length === words[i + 1].length) {
+//     return words[i];
+//   }
+// }
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-let add = 0;
 function sumNumbers(numbers) {
-  // let number = 0;
-  // let sum = 0;
+  let sum = 0;
   for (let i = 0; i < numbers.length; i++) {
-    if (typeof numbers[i] === Number) {
-      add += numbers[i];
+    if (typeof numbers[i] === "number") {
+      sum += numbers[i];
     } else if (numbers.length === 0) {
       return 0;
     } else if (numbers.length === 1) {
@@ -53,8 +66,7 @@ function sumNumbers(numbers) {
       return 0;
     }
   }
-  return add;
-  // add.push(number);
+  return sum;
 }
 
 // Iteration #3.1 Bonus:
@@ -91,7 +103,20 @@ const wordsArr = [
   "palace",
 ];
 
-function averageWordLength() {}
+function averageWordLength(words) {
+  let lengthNumber = 0;
+  if (!words.length) {
+    return null;
+  } else if (words.length === 1) {
+    for (let i = 0; i < words.length; i++) {
+      return words[i].length;
+    }
+  } else
+    for (let j = 0; j < words.length; j++) {
+      lengthNumber += words[j].length;
+    }
+  return lengthNumber / words.length;
+}
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -111,7 +136,19 @@ const wordsUnique = [
   "bring",
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(array) {
+  if (!array.length) {
+    return null;
+  }
+  let uniqArray = [];
+  for (let i = 0; i < array.length; i++) {
+    let word = array[i];
+    if (!uniqArray.includes(word)) {
+      uniqArray.push(word);
+    }
+  }
+  return uniqArray;
+}
 
 // Iteration #6: Find elements
 const wordsFind = [
