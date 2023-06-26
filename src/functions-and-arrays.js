@@ -162,7 +162,19 @@ const wordsFind = [
   "disobedience",
 ];
 
-function doesWordExist() {}
+function doesWordExist(wordsFind, findTheWord) {
+  if (wordsFind.length === 1) {
+    return true;
+  } else if (wordsFind.length === 0) {
+    return null;
+  }
+  for (i = 0; i < wordsFind.length; i++) {
+    if (findTheWord === wordsFind[i]) {
+      return true;
+    }
+  }
+  return false;
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -179,7 +191,22 @@ const wordsCount = [
   "matter",
 ];
 
-function howManyTimes() {}
+function howManyTimes(wordsCount, palabra) {
+  let count = 0;
+  for (i = 0; i < wordsCount.length; i++) {
+    if (wordsCount[i] === palabra) {
+      count++;
+      if (count === 1) {
+        count = 1;
+      } else if (count === 5) {
+        count = 5;
+      } else if (count === 0) {
+        count = 0;
+      }
+    }
+  }
+  return count;
+}
 
 // Iteration #8: Bonus
 const matrix = [
