@@ -70,7 +70,27 @@ function sumNumbers(numbers) {
 }
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const calculate = [12, 23, 42, 12, 2, 4, 5, 6, 3, 12];
+const string = ["5", "5", "5", "3"];
+function sum(arrsum) {
+  let add = 0;
+  let str = 0;
+  if (arrsum.length === 0) {
+    return 0;
+  } else if (arrsum.length === 1) {
+    return arrsum[0];
+  }
+  for (let i = 0; i < arrsum.length; i++) {
+    if (typeof arrsum[i] === "number" && arrsum[i] !== 0) {
+      add += arrsum[i];
+    } else if (arrsum[i] === 0) {
+      add += arrsum[i];
+    } else if (typeof arrsum[i] === "string") {
+      str += parseInt(arrsum[i]);
+    }
+  }
+  return add;
+}
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
@@ -119,7 +139,12 @@ function averageWordLength(words) {
 }
 
 // Bonus - Iteration #4.1
-function avg() {}
+const cal = [12, 23, 42, 12, 2, 4, 5, 6, , 3, 12];
+function avg(arr) {
+  if (!arr.length) {
+    return null;
+  }
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
